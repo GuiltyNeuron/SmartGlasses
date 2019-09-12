@@ -1,0 +1,32 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.12/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/CMakePushCheckState.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/CheckStructHasMember.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindGIF.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindJPEG.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindPNG.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindTIFF.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.12/Modules/SelectLibraryConfigurations.cmake
+C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/targets/src/CMakeLists.txt
+C:/vcpkg/installed/x64-windows/share/jpeg/vcpkg-cmake-wrapper.cmake
+C:/vcpkg/installed/x64-windows/share/leptonica/LeptonicaConfig-version.cmake
+C:/vcpkg/installed/x64-windows/share/leptonica/LeptonicaConfig.cmake
+C:/vcpkg/installed/x64-windows/share/leptonica/LeptonicaTargets-debug.cmake
+C:/vcpkg/installed/x64-windows/share/leptonica/LeptonicaTargets-release.cmake
+C:/vcpkg/installed/x64-windows/share/leptonica/LeptonicaTargets.cmake
+C:/vcpkg/installed/x64-windows/share/opencv/OpenCVConfig-version.cmake
+C:/vcpkg/installed/x64-windows/share/opencv/OpenCVConfig.cmake
+C:/vcpkg/installed/x64-windows/share/opencv/OpenCVModules-debug.cmake
+C:/vcpkg/installed/x64-windows/share/opencv/OpenCVModules-release.cmake
+C:/vcpkg/installed/x64-windows/share/opencv/OpenCVModules.cmake
+C:/vcpkg/installed/x64-windows/share/tesseract/TesseractConfig-version.cmake
+C:/vcpkg/installed/x64-windows/share/tesseract/TesseractConfig.cmake
+C:/vcpkg/installed/x64-windows/share/tesseract/TesseractTargets-debug.cmake
+C:/vcpkg/installed/x64-windows/share/tesseract/TesseractTargets-release.cmake
+C:/vcpkg/installed/x64-windows/share/tesseract/TesseractTargets.cmake
+C:/vcpkg/installed/x64-windows/share/tiff/vcpkg-cmake-wrapper.cmake

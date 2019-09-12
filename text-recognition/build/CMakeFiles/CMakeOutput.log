@@ -1,0 +1,467 @@
+The system is: Windows - 10.0.17134 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits r�serv�s.
+
+La g�n�ration a d�marr� 05/09/2019 12:59:57.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdC\CompilerIdC.vcxproj" sur le n�ud 1 (cibles par d�faut).
+PrepareForBuild:
+  Cr�ation du r�pertoire "Debug\".
+  Cr�ation du r�pertoire "Debug\CompilerIdC.tlog\".
+InitializeBuildStatus:
+  Cr�ation de "Debug\CompilerIdC.tlog\unsuccessfulbuild", car "AlwaysCreate" a �t� sp�cifi�.
+VcpkgTripletSelection:
+  Using triplet "x86-windows" from "C:\vcpkg\installed\x86-windows\"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /I"C:\vcpkg\installed\x86-windows\include" /nologo /W0 /WX- /diagnostics:classic /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\vcpkg\installed\x86-windows\debug\lib" /LIBPATH:"C:\vcpkg\installed\x86-windows\debug\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\vcpkg\installed\x86-windows\debug\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdC\.\CompilerIdC.exe
+AppLocalFromInstalled:
+  C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -noprofile -File "C:\vcpkg\scripts\buildsystems\msbuild\applocal.ps1" "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdC\.\CompilerIdC.exe" "C:\vcpkg\installed\x86-windows\debug\bin" "Debug\CompilerIdC.tlog\CompilerIdC.write.1u.tlog" "Debug\vcpkg.applocal.log"
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\Hostx86\x86\cl.exe
+FinalizeBuildStatus:
+  Suppression du fichier "Debug\CompilerIdC.tlog\unsuccessfulbuild".
+  Mise � jour de l'horodatage "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
+G�n�ration du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdC\CompilerIdC.vcxproj" termin�e (cibles par d�faut).
+
+La g�n�ration a r�ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps �coul� 00:00:05.17
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/3.12.4/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits r�serv�s.
+
+La g�n�ration a d�marr� 05/09/2019 13:00:03.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdCXX\CompilerIdCXX.vcxproj" sur le n�ud 1 (cibles par d�faut).
+PrepareForBuild:
+  Cr�ation du r�pertoire "Debug\".
+  Cr�ation du r�pertoire "Debug\CompilerIdCXX.tlog\".
+InitializeBuildStatus:
+  Cr�ation de "Debug\CompilerIdCXX.tlog\unsuccessfulbuild", car "AlwaysCreate" a �t� sp�cifi�.
+VcpkgTripletSelection:
+  Using triplet "x86-windows" from "C:\vcpkg\installed\x86-windows\"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /I"C:\vcpkg\installed\x86-windows\include" /nologo /W0 /WX- /diagnostics:classic /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\vcpkg\installed\x86-windows\debug\lib" /LIBPATH:"C:\vcpkg\installed\x86-windows\debug\lib\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\vcpkg\installed\x86-windows\debug\lib\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdCXX\.\CompilerIdCXX.exe
+AppLocalFromInstalled:
+  C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -noprofile -File "C:\vcpkg\scripts\buildsystems\msbuild\applocal.ps1" "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdCXX\.\CompilerIdCXX.exe" "C:\vcpkg\installed\x86-windows\debug\bin" "Debug\CompilerIdCXX.tlog\CompilerIdCXX.write.1u.tlog" "Debug\vcpkg.applocal.log"
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\Hostx86\x86\cl.exe
+FinalizeBuildStatus:
+  Suppression du fichier "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
+  Mise � jour de l'horodatage "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
+G�n�ration du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\3.12.4\CompilerIdCXX\CompilerIdCXX.vcxproj" termin�e (cibles par d�faut).
+
+La g�n�ration a r�ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps �coul� 00:00:01.76
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/3.12.4/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_aa7ad.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:05.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_aa7ad.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_aa7ad.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_aa7ad.dir\Debug\cmTC_aa7ad.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_aa7ad.dir\Debug\cmTC_aa7ad.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_aa7ad.dir\Debug\\" /Fd"cmTC_aa7ad.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_aa7ad.dir\Debug\\" /Fd"cmTC_aa7ad.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\testCCompiler.c"
+  testCCompiler.c
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_aa7ad.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_aa7ad.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_aa7ad.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_aa7ad.dir\Debug\testCCompiler.obj
+  cmTC_aa7ad.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_aa7ad.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_aa7ad.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_aa7ad.dir\Debug\cmTC_aa7ad.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_aa7ad.dir\Debug\cmTC_aa7ad.tlog\cmTC_aa7ad.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_aa7ad.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:02.11
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_1883e.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:08.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_1883e.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_1883e.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_1883e.dir\Debug\cmTC_1883e.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_1883e.dir\Debug\cmTC_1883e.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1883e.dir\Debug\\" /Fd"cmTC_1883e.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1883e.dir\Debug\\" /Fd"cmTC_1883e.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCCompilerABI.c"
+  CMakeCCompilerABI.c
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_1883e.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_1883e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_1883e.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_1883e.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_1883e.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_1883e.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_1883e.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_1883e.dir\Debug\cmTC_1883e.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_1883e.dir\Debug\cmTC_1883e.tlog\cmTC_1883e.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_1883e.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:01.67
+
+
+
+
+Detecting C [] compiler features compiled with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_b6510.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:10.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_b6510.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_b6510.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_b6510.dir\Debug\cmTC_b6510.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_b6510.dir\Debug\cmTC_b6510.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6510.dir\Debug\\" /Fd"cmTC_b6510.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\feature_tests.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6510.dir\Debug\\" /Fd"cmTC_b6510.dir\Debug\vc141.pdb" /Gd /TC /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\feature_tests.c"
+  feature_tests.c
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_b6510.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_b6510.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_b6510.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_b6510.dir\Debug\feature_tests.obj
+  cmTC_b6510.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_b6510.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_b6510.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_b6510.dir\Debug\cmTC_b6510.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_b6510.dir\Debug\cmTC_b6510.tlog\cmTC_b6510.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_b6510.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:01.67
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_2b426.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:12.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_2b426.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_2b426.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_2b426.dir\Debug\cmTC_2b426.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_2b426.dir\Debug\cmTC_2b426.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2b426.dir\Debug\\" /Fd"cmTC_2b426.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2b426.dir\Debug\\" /Fd"cmTC_2b426.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  testCXXCompiler.cxx
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_2b426.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_2b426.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_2b426.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_2b426.dir\Debug\testCXXCompiler.obj
+  cmTC_2b426.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_2b426.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_2b426.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_2b426.dir\Debug\cmTC_2b426.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_2b426.dir\Debug\cmTC_2b426.tlog\cmTC_2b426.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_2b426.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:01.60
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_be487.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:13.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_be487.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_be487.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_be487.dir\Debug\cmTC_be487.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_be487.dir\Debug\cmTC_be487.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_be487.dir\Debug\\" /Fd"cmTC_be487.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_be487.dir\Debug\\" /Fd"cmTC_be487.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXCompilerABI.cpp"
+  CMakeCXXCompilerABI.cpp
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_be487.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_be487.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_be487.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_be487.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_be487.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_be487.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_be487.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_be487.dir\Debug\cmTC_be487.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_be487.dir\Debug\cmTC_be487.tlog\cmTC_be487.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_be487.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:01.70
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_d5f04.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.8.169+g1ccb72aefa pour .NET Framework
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+La génération a démarré 05/09/2019 13:00:15.
+Projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_d5f04.vcxproj" sur le nœud 1 (cibles par défaut).
+PrepareForBuild:
+  Création du répertoire "cmTC_d5f04.dir\Debug\".
+  Création du répertoire "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\".
+  Création du répertoire "cmTC_d5f04.dir\Debug\cmTC_d5f04.tlog\".
+InitializeBuildStatus:
+  Création de "cmTC_d5f04.dir\Debug\cmTC_d5f04.tlog\unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+VcpkgTripletSelection:
+  Not using Vcpkg because VcpkgEnabled is "false"
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d5f04.dir\Debug\\" /Fd"cmTC_d5f04.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\feature_tests.cxx"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.15.26732.1 for x86
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d5f04.dir\Debug\\" /Fd"cmTC_d5f04.dir\Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:queue "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\feature_tests.cxx"
+  feature_tests.cxx
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_d5f04.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_d5f04.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_d5f04.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d5f04.dir\Debug\feature_tests.obj
+  cmTC_d5f04.vcxproj -> C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\Debug\cmTC_d5f04.exe
+PostBuildEvent:
+  setlocal
+  powershell -noprofile -executionpolicy Bypass -file C:/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/achraf_k/Desktop/achraf/repo/GuideMeGlasses/text-recognition/build/CMakeFiles/CMakeTmp/Debug/cmTC_d5f04.exe -installedDir C:/vcpkg/installed/x86-windows/debug/bin -OutVariable out
+  if %errorlevel% neq 0 goto :cmEnd
+  :cmEnd
+  endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+  :cmErrorLevel
+  exit /b %1
+  :cmDone
+  if %errorlevel% neq 0 goto :VCEnd
+  :VCEnd
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_d5f04.dir\Debug\cmTC_d5f04.tlog\unsuccessfulbuild".
+  Mise à jour de l'horodatage "cmTC_d5f04.dir\Debug\cmTC_d5f04.tlog\cmTC_d5f04.lastbuildstate".
+Génération du projet "C:\Users\achraf_k\Desktop\achraf\repo\GuideMeGlasses\text-recognition\build\CMakeFiles\CMakeTmp\cmTC_d5f04.vcxproj" terminée (cibles par défaut).
+
+La génération a réussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps écoulé 00:00:02.21
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
