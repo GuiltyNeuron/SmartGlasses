@@ -1,5 +1,5 @@
 # Guide Me Glasses (#gmg)
-[![Slack Status](https://img.shields.io/badge/slack-@guidemeglasses-blue.svg?logo=slack)](https://guidemeglasses.slack.com)
+[![Slack Status](https://img.shields.io/badge/slack-@guidemeglasses-blue.svg?logo=slack)](https://noyet.slack.com)
 
 > Give the future to your eyes :eyeglasses:
 
