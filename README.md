@@ -7,7 +7,7 @@
 
 
 ## Prototype
-![GuideMeGlasses](docs/prototype.png)
+![GuideMeGlasses](docs/architecture.png)
 
 ## Documentation links
 - Free computer science books : http://www.allitebooks.org/
