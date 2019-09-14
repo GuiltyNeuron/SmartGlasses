@@ -9,6 +9,8 @@
 ## Prototype architecture
 ![architecture](docs/architecture.png)
 
+## Matriels
+![matriels](docs/matriels.png)
 ## Documentation links
 - Free computer science books : http://www.allitebooks.org/
 - Natural Language Processing (NLP) : https://github.com/KhazriAchraf/Text_Classification
