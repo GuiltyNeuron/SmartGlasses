@@ -6,7 +6,7 @@
 ![GuideMeGlassesLogo](docs/images/logo.png)
 
 
-## Prototype
+## Prototype architecture
 ![architecture](docs/architecture.png)
 
 ## Documentation links
