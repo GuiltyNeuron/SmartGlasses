@@ -3,11 +3,11 @@
 
 > Bring the future to your eyes :eyeglasses:
 
-![GuideMeGlasses](docs/images/logo.png)
+![GuideMeGlassesLogo](docs/images/logo.png)
 
 
 ## Prototype
-![GuideMeGlasses](docs/architecture.png)
+![architecture](docs/architecture.png)
 
 ## Documentation links
 - Free computer science books : http://www.allitebooks.org/
