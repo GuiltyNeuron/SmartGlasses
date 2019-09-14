@@ -8,6 +8,11 @@
 
 ## Prototype
 ![GuideMeGlasses](docs/prototype.png)
+
+## Documentation links
+- Free computer science books : http://www.allitebooks.org/
+- Natural Language Processing (NLP) : https://github.com/KhazriAchraf/Text_Classification
+- Image caption : https://github.com/tensorflow/models/tree/master/research/im2txt
 ## Licence
 GuideMeGlasses
 :eyeglasses:
