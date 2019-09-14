@@ -1,0 +1,3 @@
+pytesseract
+opencv-python
+cx_freeze
