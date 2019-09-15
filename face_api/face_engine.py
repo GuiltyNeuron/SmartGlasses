@@ -2,7 +2,7 @@ import cv2 as cv
 import face_recognition
 
 
-class faceDetector():
+class faceEngine():
 
     def cascade_classifier_detector(self, img):
 
@@ -50,9 +50,28 @@ class faceDetector():
         cv.waitKey(0)
         cv.destroyAllWindows()
 
+    def dlib_recognition(self):
 
+        # Load image
+        jobs = face_recognition.load_image_file("data/jobs1.jpg")
+        obama = face_recognition.load_image_file("data/obama1.jpg")
+        einstein = face_recognition.load_image_file("data/einstein1.jpg")
+        unknown_image = face_recognition.load_image_file("data/obama3.jpg")
+
+        # Encode facial features
+        jobs_encoding = face_recognition.face_encodings(jobs)[0]
+        obama_encoding = face_recognition.face_encodings(obama)[0]
+        einstein_encoding = face_recognition.face_encodings(einstein)[0]
+        unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
+
+        # Compare features
+        results = face_recognition.compare_faces([einstein_encoding, obama_encoding, jobs_encoding], unknown_encoding)
+
+        return results
 # Load the jpg file into a numpy array
 image = cv.imread("data/test.jpg")
 
-fd = faceDetector()
-fd.dlib_detector(image)
+fd = faceEngine()
+
+out = fd.dlib_recognition()
+print(out)
