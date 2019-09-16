@@ -136,7 +136,7 @@ class faceEngine():
                 # Add person name to dataset
                 names.append(os.path.splitext(filename)[0])
 
-                print("Encoded <<<>>>" + os.path.splitext(filename)[0] + "<<<>>>")
+                print("<<<<<<<< Encoded >>>>>>>>>>> <<<<<<<< " + os.path.splitext(filename)[0] + " >>>>>>>>>>>")
 
         # Save dataset
         data = pd.DataFrame({"encodings": features, "names": names})
@@ -154,23 +154,36 @@ class faceEngine():
         # Get file name
         filename = os.path.basename(image_path)
 
-        # Add name to other names
-        names.append(os.path.splitext(filename)[0])
+        # Person name
+        name = os.path.splitext(filename)[0]
 
-        # Load image
-        image = face_recognition.load_image_file(image_path)
+        # Check if the person already exists
+        exist = False
+        for n in names:
+            if n == name:
+                exist = True
+                break
 
-        # Encode face features
-        feature = face_recognition.face_encodings(image)[0]
+        if(exist == False):
+            # Add name to other names
+            names.append(name)
 
-        # Append feature to total features list
-        features.append(feature)
+            # Load image
+            image = face_recognition.load_image_file(image_path)
 
-        # Save dataset
-        data = pd.DataFrame({"encodings": features, "names": names})
-        pd.to_pickle(data, self.dataset_path)
+            # Encode face features
+            feature = face_recognition.face_encodings(image)[0]
 
-        print(os.path.splitext(filename)[0] + " Added successefuly !")
+            # Append feature to total features list
+            features.append(feature)
+
+            # Save dataset
+            data = pd.DataFrame({"encodings": features, "names": names})
+            pd.to_pickle(data, self.dataset_path)
+
+            print(os.path.splitext(filename)[0] + " Added successefuly !")
+        else:
+            print(name + " already exist !")
 
 """fd = faceEngine()
 
