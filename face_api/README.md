@@ -6,6 +6,9 @@ Face detection using :
 Face recognition using :
  - DLIB
  
+# Documentation :books:
+- Dlib github Readme file [link](https://github.com/ageitgey/face_recognition)
+- Face detection and recognition Raspberry Pi [Link](https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/)
  ## Licence
 GuideMeGlasses
 :eyeglasses:
