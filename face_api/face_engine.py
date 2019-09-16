@@ -1,12 +1,21 @@
 import cv2 as cv
 import face_recognition
 import os
+import sys
 import pandas as pd
 import numpy as np
 import pickle
 
 
 class faceEngine():
+
+    def __init__(self):
+
+        # Relative dataset path to this module
+        self.dataset_path = os.path.join(os.path.dirname(__file__), 'data/data.pkl')
+
+        # Relative dataset images path to this module
+        self.face_images_path = os.path.join(os.path.dirname(__file__), 'data/dataset')
 
     def cascade_classifier_detector(self, img):
         """
@@ -37,12 +46,15 @@ class faceEngine():
                 cv.waitKey(0)"""
         return faces
 
-    def dlib_detector(self, img):
+    def dlib_detector(self, img_path):
         """
         Face detection using Dlib
         :param img: input image
         :return: faces bboxes
         """
+
+        # Load image
+        img = cv.imread(img_path)
 
         # Find all the faces in the image
         face_locations = face_recognition.face_locations(img)
@@ -75,7 +87,7 @@ class faceEngine():
         output_name = "No_Body"
 
         # Load dataset
-        dataset = pd.read_pickle("data/data.pkl")
+        dataset = pd.read_pickle(self.dataset_path)
 
         encodings = dataset["encodings"].values
         names = dataset["names"].values
@@ -98,7 +110,7 @@ class faceEngine():
 
         return output_name
 
-    def create_dataset(self, folder_path):
+    def create_dataset(self):
 
         # Faces encoding features
         features = []
@@ -107,13 +119,13 @@ class faceEngine():
         names = []
 
         # Filter all files in the directory
-        for filename in os.listdir(folder_path):
+        for filename in os.listdir(self.face_images_path):
 
             # Make sure that our file is text
             if (filename.endswith('.jpeg')) or (filename.endswith('.jpg')) or (filename.endswith('.png')):
 
                 # Load image
-                image = face_recognition.load_image_file(folder_path + "/" + filename)
+                image = face_recognition.load_image_file(self.face_images_path + "/" + filename)
 
                 # Encode face features
                 feature = face_recognition.face_encodings(image)[0]
@@ -128,12 +140,12 @@ class faceEngine():
 
         # Save dataset
         data = pd.DataFrame({"encodings": features, "names": names})
-        pd.to_pickle(data, "data/data.pkl")
+        pd.to_pickle(data, self.dataset_path)
 
     def add_face(self, image_path):
 
         # Load dataset
-        dataset = pd.read_pickle("data/data.pkl")
+        dataset = pd.read_pickle(self.dataset_path)
 
         # Get old data
         names = list(dataset['names'].values)
@@ -145,7 +157,6 @@ class faceEngine():
         # Add name to other names
         names.append(os.path.splitext(filename)[0])
 
-        print(names)
         # Load image
         image = face_recognition.load_image_file(image_path)
 
@@ -157,15 +168,17 @@ class faceEngine():
 
         # Save dataset
         data = pd.DataFrame({"encodings": features, "names": names})
-        pd.to_pickle(data, "data/data.pkl")
+        pd.to_pickle(data, self.dataset_path)
 
-fd = faceEngine()
+        print(os.path.splitext(filename)[0] + " Added successefuly !")
+
+"""fd = faceEngine()
 
 # Folder that contains all the images
 folder_path = "data/dataset"
 
-#fd.create_dataset(folder_path)
+fd.create_dataset(folder_path)
 
-#fd.add_face("data/Albert_Einstein.jpg")
+fd.add_face("data/Albert_Einstein.jpg")
 out = fd.dlib_recognition("data/Albert_Einstein.jpg")
-print(out)
+print(out)"""
