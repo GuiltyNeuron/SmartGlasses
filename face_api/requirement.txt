@@ -1,1 +1,4 @@
 face_recognition
+pickle-warehouse
+pandas
+numpy
