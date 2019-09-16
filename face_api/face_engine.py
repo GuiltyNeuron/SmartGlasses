@@ -24,18 +24,18 @@ class faceEngine():
 
         # Detec faces
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-        for (x, y, w, h) in faces:
-            cv.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
-            roi_gray = gray[y:y + h, x:x + w]
-            roi_color = img[y:y + h, x:x + w]
-            eyes = eye_cascade.detectMultiScale(roi_gray)
-            for (ex, ey, ew, eh) in eyes:
-                cv.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
+        """for (x, y, w, h) in faces:
+                    cv.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                    roi_gray = gray[y:y + h, x:x + w]
+                    roi_color = img[y:y + h, x:x + w]
+                    eyes = eye_cascade.detectMultiScale(roi_gray)
+                    for (ex, ey, ew, eh) in eyes:
+                        cv.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
 
-        cv.imwrite("detection.jpg", img)
-        cv.imshow('img', img)
-        cv.waitKey(0)
-        cv.destroyAllWindows()
+                cv.imwrite("detection.jpg", img)
+                cv.imshow('img', img)
+                cv.waitKey(0)"""
+        return faces
 
     def dlib_detector(self, img):
         """
@@ -48,7 +48,7 @@ class faceEngine():
         face_locations = face_recognition.face_locations(img)
 
         # Get number of faces
-        number_of_faces = len(face_locations)
+        """number_of_faces = len(face_locations)
         print("Number of face(s) in this image {}.".format(number_of_faces))
 
         for face_location in face_locations:
@@ -62,9 +62,11 @@ class faceEngine():
         cv.imshow("img", img)
         cv.imwrite("detected.jpg", img)
         cv.waitKey(0)
-        cv.destroyAllWindows()
+        cv.destroyAllWindows()"""
 
-    def dlib_recognition(self, img):
+        return face_locations
+
+    def dlib_recognition(self, img_path):
         """
         Face recognition using Dlib
         :param img: input image
@@ -78,18 +80,19 @@ class faceEngine():
         encodings = dataset["encodings"].values
         names = dataset["names"].values
         # Load image
-        jobs = face_recognition.load_image_file("data/jobs1.jpg")
+        img = face_recognition.load_image_file(img_path)
 
         # Encode facial features
-        jobs_encoding = face_recognition.face_encodings(jobs)[0]
+        encoding = face_recognition.face_encodings(img)[0]
         i = 0
 
         for encode in encodings:
 
-            result = face_recognition.compare_faces([encode], jobs_encoding)
+            result = face_recognition.compare_faces([encode], encoding)
 
             if result[0] == True:
                 output_name = names[i]
+                break
 
             i += 1
 
@@ -127,13 +130,34 @@ class faceEngine():
         data = pd.DataFrame({"encodings": features, "names": names})
         pd.to_pickle(data, "data/data.pkl")
 
+    def add_face(self, image_path):
 
+        # Load dataset
+        dataset = pd.read_pickle("data/data.pkl")
 
-    def add_face(self):
+        # Get old data
+        names = list(dataset['names'].values)
+        features = list(dataset['encodings'].values)
 
-        return 0
-# Load the jpg file into a numpy array
-image = cv.imread("data/test.jpg")
+        # Get file name
+        filename = os.path.basename(image_path)
+
+        # Add name to other names
+        names.append(os.path.splitext(filename)[0])
+
+        print(names)
+        # Load image
+        image = face_recognition.load_image_file(image_path)
+
+        # Encode face features
+        feature = face_recognition.face_encodings(image)[0]
+
+        # Append feature to total features list
+        features.append(feature)
+
+        # Save dataset
+        data = pd.DataFrame({"encodings": features, "names": names})
+        pd.to_pickle(data, "data/data.pkl")
 
 fd = faceEngine()
 
@@ -142,5 +166,6 @@ folder_path = "data/dataset"
 
 #fd.create_dataset(folder_path)
 
-out = fd.dlib_recognition(image)
+#fd.add_face("data/Albert_Einstein.jpg")
+out = fd.dlib_recognition("data/Albert_Einstein.jpg")
 print(out)
