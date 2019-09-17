@@ -5,6 +5,9 @@ import sys
 import pandas as pd
 import numpy as np
 import pickle
+import dlib
+import face_api.resources.mtcnn.mtcnn as mtcnn
+import tensorflow as tf
 
 
 class OpenCVHaarFaceDetector():
@@ -179,13 +182,16 @@ class DlibHOGFaceDetector():
 class DlibCNNFaceDetector():
     def __init__(self,
                  nrof_upsample=0,
-                 model_path='models/mmod_human_face_detector.dat'):
+                 model_path=os.path.join(os.path.dirname(__file__), 'models/mmod_human_face_detector.dat')):
 
         self.cnn_detector = dlib.cnn_face_detection_model_v1(model_path)
         self.nrof_upsample = nrof_upsample
 
-    def detect_face(self, image):
-
+    def detect_face(self, image_path):
+        
+        # Load image
+        image = cv.imread(image_path)
+        
         dets = self.cnn_detector(image, self.nrof_upsample)
 
         faces = []
@@ -202,7 +208,7 @@ class DlibCNNFaceDetector():
     
 
 class TensorflowMTCNNFaceDetector():
-    def __init__(self, model_path='models/mtcnn'):
+    def __init__(self, model_path=os.path.join(os.path.dirname(__file__), 'models/mtcnn')):
 
         self.minsize = 15
         self.threshold = [0.6, 0.7, 0.7]  # three steps's threshold
@@ -216,8 +222,11 @@ class TensorflowMTCNNFaceDetector():
                 self.pnet, self.rnet, self.onet = mtcnn.create_mtcnn(
                     self.sess, model_path)
 
-    def detect_face(self, image):
-
+    def detect_face(self, image_path):
+        
+        # Load image
+        image = cv.imread(image_path)
+        
         dets, face_landmarks = mtcnn.detect_face(
             image, self.minsize, self.pnet, self.rnet, self.onet,
             self.threshold, self.factor)
@@ -231,7 +240,7 @@ class TensorflowMTCNNFaceDetector():
 class TensoflowMobilNetSSDFaceDector():
     def __init__(self,
                  det_threshold=0.3,
-                 model_path='models/ssd/frozen_inference_graph_face.pb'):
+                 model_path=os.path.join(os.path.dirname(__file__), 'models/ssd/frozen_inference_graph_face.pb')):
 
         self.det_threshold = det_threshold
         self.detection_graph = tf.Graph()
@@ -247,11 +256,14 @@ class TensoflowMobilNetSSDFaceDector():
             config.gpu_options.allow_growth = True
             self.sess = tf.Session(graph=self.detection_graph, config=config)
 
-    def detect_face(self, image):
+    def detect_face(self, image_path):
+        
+        # Load image
+        image = cv.imread(image_path)
 
         h, w, c = image.shape
 
-        image_np = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image_np = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
         image_np_expanded = np.expand_dims(image_np, axis=0)
         image_tensor = self.detection_graph.get_tensor_by_name(
