@@ -2,3 +2,6 @@ face_recognition
 pickle-warehouse
 pandas
 numpy
+tensorflow
+tqdm
+dlib
