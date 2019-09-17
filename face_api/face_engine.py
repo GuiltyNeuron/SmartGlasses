@@ -7,32 +7,28 @@ import numpy as np
 import pickle
 
 
-class faceEngine():
-
+class OpenCVHaarFaceDetector():
+    
     def __init__(self):
-
-        # Relative dataset path to this module
-        self.dataset_path = os.path.join(os.path.dirname(__file__), 'data/data.pkl')
-
-        # Relative dataset images path to this module
-        self.face_images_path = os.path.join(os.path.dirname(__file__), 'data/dataset')
-
-    def cascade_classifier_detector(self, img):
+        # Load Haar Cascade Classifier
+        self.path = os.path.join(os.path.dirname(__file__), 'data/haarcascade_frontalface_default.xml')
+        self.face_cascade = cv.CascadeClassifier(self.path)
+        
+    def cascade_classifier_detector(self, img_path):
         """
         Face detection using Haar cascade classifier with OpenCv
         :param img: input image
         :return: faces bboxes
         """
-
-        # Load Haar Cascade Classifier
-        face_cascade = cv.CascadeClassifier('data/haarcascade_frontalface_default.xml')
-        eye_cascade = cv.CascadeClassifier('data/haarcascade_eye.xml')
-
+        
+        # Load image
+        img = cv.imread(img_path)
+        
         # Convert image to graysclae
         gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
         # Detec faces
-        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        faces = self.face_cascade.detectMultiScale(gray, 1.3, 5)
         """for (x, y, w, h) in faces:
                     cv.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
                     roi_gray = gray[y:y + h, x:x + w]
@@ -46,7 +42,18 @@ class faceEngine():
                 cv.waitKey(0)"""
         return faces
 
-    def dlib_detector(self, img_path):
+
+class DlibHOGFaceDetector():
+
+    def __init__(self):
+
+        # Relative dataset path to this module
+        self.dataset_path = os.path.join(os.path.dirname(__file__), 'data/data.pkl')
+
+        # Relative dataset images path to this module
+        self.face_images_path = os.path.join(os.path.dirname(__file__), 'data/dataset')
+
+    def face_detector(self, img_path):
         """
         Face detection using Dlib
         :param img: input image
@@ -54,27 +61,10 @@ class faceEngine():
         """
 
         # Load image
-        img = cv.imread(img_path)
+        img = face_recognition.load_image_file(img_path)
 
         # Find all the faces in the image
         face_locations = face_recognition.face_locations(img)
-
-        # Get number of faces
-        """number_of_faces = len(face_locations)
-        print("Number of face(s) in this image {}.".format(number_of_faces))
-
-        for face_location in face_locations:
-            # Get coord
-            x, y, z, w = face_location
-
-            # Draw Face rectangle
-            cv.rectangle(img, (w, x), (y, z), (0, 0, 255), 2)
-
-        # Show image
-        cv.imshow("img", img)
-        cv.imwrite("detected.jpg", img)
-        cv.waitKey(0)
-        cv.destroyAllWindows()"""
 
         return face_locations
 
@@ -185,13 +175,112 @@ class faceEngine():
         else:
             print(name + " already exist !")
 
-"""fd = faceEngine()
 
-# Folder that contains all the images
-folder_path = "data/dataset"
+class DlibCNNFaceDetector():
+    def __init__(self,
+                 nrof_upsample=0,
+                 model_path='models/mmod_human_face_detector.dat'):
 
-fd.create_dataset(folder_path)
+        self.cnn_detector = dlib.cnn_face_detection_model_v1(model_path)
+        self.nrof_upsample = nrof_upsample
 
-fd.add_face("data/Albert_Einstein.jpg")
-out = fd.dlib_recognition("data/Albert_Einstein.jpg")
-print(out)"""
+    def detect_face(self, image):
+
+        dets = self.cnn_detector(image, self.nrof_upsample)
+
+        faces = []
+        for i, d in enumerate(dets):
+            x1 = int(d.rect.left())
+            y1 = int(d.rect.top())
+            x2 = int(d.rect.right())
+            y2 = int(d.rect.bottom())
+            score = float(d.confidence)
+
+            faces.append(np.array([x1, y1, x2, y2]))
+
+        return np.array(faces)
+    
+
+class TensorflowMTCNNFaceDetector():
+    def __init__(self, model_path='models/mtcnn'):
+
+        self.minsize = 15
+        self.threshold = [0.6, 0.7, 0.7]  # three steps's threshold
+        self.factor = 0.709  # scale factor
+
+        with tf.Graph().as_default():
+            config = tf.ConfigProto()
+            config.gpu_options.allow_growth = True
+            self.sess = tf.Session(config=config)
+            with self.sess.as_default():
+                self.pnet, self.rnet, self.onet = mtcnn.create_mtcnn(
+                    self.sess, model_path)
+
+    def detect_face(self, image):
+
+        dets, face_landmarks = mtcnn.detect_face(
+            image, self.minsize, self.pnet, self.rnet, self.onet,
+            self.threshold, self.factor)
+
+        faces = dets[:, :4].astype('int')
+        conf_score = dets[:, 4]
+
+        return faces
+
+
+class TensoflowMobilNetSSDFaceDector():
+    def __init__(self,
+                 det_threshold=0.3,
+                 model_path='models/ssd/frozen_inference_graph_face.pb'):
+
+        self.det_threshold = det_threshold
+        self.detection_graph = tf.Graph()
+        with self.detection_graph.as_default():
+            od_graph_def = tf.GraphDef()
+            with tf.gfile.GFile(model_path, 'rb') as fid:
+                serialized_graph = fid.read()
+                od_graph_def.ParseFromString(serialized_graph)
+                tf.import_graph_def(od_graph_def, name='')
+
+        with self.detection_graph.as_default():
+            config = tf.ConfigProto()
+            config.gpu_options.allow_growth = True
+            self.sess = tf.Session(graph=self.detection_graph, config=config)
+
+    def detect_face(self, image):
+
+        h, w, c = image.shape
+
+        image_np = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+        image_np_expanded = np.expand_dims(image_np, axis=0)
+        image_tensor = self.detection_graph.get_tensor_by_name(
+            'image_tensor:0')
+
+        boxes = self.detection_graph.get_tensor_by_name('detection_boxes:0')
+
+        scores = self.detection_graph.get_tensor_by_name('detection_scores:0')
+        classes = self.detection_graph.get_tensor_by_name(
+            'detection_classes:0')
+        num_detections = self.detection_graph.get_tensor_by_name(
+            'num_detections:0')
+
+        (boxes, scores, classes, num_detections) = self.sess.run(
+            [boxes, scores, classes, num_detections],
+            feed_dict={image_tensor: image_np_expanded})
+
+        boxes = np.squeeze(boxes)
+        scores = np.squeeze(scores)
+
+        filtered_score_index = np.argwhere(
+            scores >= self.det_threshold).flatten()
+        selected_boxes = boxes[filtered_score_index]
+
+        faces = np.array([[
+            int(x1 * w),
+            int(y1 * h),
+            int(x2 * w),
+            int(y2 * h),
+        ] for y1, x1, y2, x2 in selected_boxes])
+
+        return faces
