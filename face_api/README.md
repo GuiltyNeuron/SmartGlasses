@@ -16,6 +16,7 @@ FaceEngine methods :
 # :books: Documentation
 - Dlib github Readme file [link](https://github.com/ageitgey/face_recognition)
 - Face detection and recognition Raspberry Pi [Link](https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/)
- ## Licence
+- Face detection benchmark [Link](https://github.com/nodefluxio/face-detector-benchmark)
+## Licence
 GuideMeGlasses
 :eyeglasses:
