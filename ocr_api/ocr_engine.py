@@ -89,23 +89,37 @@ class CtpnDetector:
 
 class TesseractEngine:
 
-    def __init__(self, tesseract_exec_path):
-        pytesseract.pytesseract.tesseract_cmd = tesseract_exec_path
+    def __init__(self):
+        self.tessdata_dir_config = r'--tessdata-dir "tessdata"'
+        self.tesseract_exec_path = r'C:\tesseract\tesseract\bin\tesseract.exe'
+        pytesseract.pytesseract.tesseract_cmd = self.tesseract_exec_path
 
     def img2txt(self, img, language):
-        return pytesseract.image_to_string(img, lang = language)
+        return pytesseract.image_to_string(img, lang = language, config=self.tessdata_dir_config)
 
-ctpn = CtpnDetector()
+class OcrEngine():
 
-# Load image
-img = cv2.imread("./data/demo/roipn.png")
+    def __init__(self):
+        self.detector = CtpnDetector()
+        self.recogniser = TesseractEngine()
 
-output, bboxes = ctpn.detect_text(img)
+    def run(self, image_path):
+        # Load image
+        img = cv2.imread(image_path)
 
-recogniser = TesseractEngine(r'C:\tesseract\tesseract\bin\tesseract.exe')
+        # BGR to Grayscale
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-output_text = []
-for i in range(len(output)):
-    output_recognition = recogniser.img2txt(img[output[i][0]:output[i][1],output[i][2]:output[i][3]], 'eng')
-    output_text.append(output_recognition)
-print(output_text)
+        # Detect text
+        output, bboxes = self.detector.detect_text(img)
+
+        # Read each bbox
+        output_text = []
+        for i in range(len(output)):
+            output_recognition = self.recogniser.img2txt(gray[output[i][0]:output[i][1],output[i][2]:output[i][3]], 'eng')
+            output_text.append(output_recognition)
+
+        print(output_text)
+
+ocr = OcrEngine()
+ocr.run("data/demo/4.png")
