@@ -1,4 +1,4 @@
-# Wiki API
+# :book: Wiki API
 
 Getting informations about anything (persons, dishes, countries ...) with wiki api from wikipedia using beatiful soup for html parsing.
 # :books: Documentation
