@@ -9,12 +9,15 @@ import argparse
 import os
 import glob
 from face_api.face_engine import *
+from wiki_api.wiki_engine import WikiEngine
+
 
 # Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--t', '-task', help="Classifier mode : task or train", type= str)
 parser.add_argument('--p', '-path', help="File path", type= str)
 parser.add_argument('--m', '-method', help="Face detection method", type= str)
+parser.add_argument('--i', '-input', help="input text object", type= str)
 
 # Get args
 args = parser.parse_args()
@@ -22,6 +25,7 @@ args = parser.parse_args()
 # Object instance
 fe = DlibHOGFaceDetector()
 haar = OpenCVHaarFaceDetector()
+
 # Face detection
 if args.t == "face_detection":
 
@@ -68,6 +72,12 @@ elif args.t == "face_init":
 elif args.t == "add_face":
     face_recogniser = DlibHOGFaceDetector()
     face_recogniser.add_face(args.p)
+
+# Ask about somthing using wikipedia
+elif args.t == "wiki":
+    we = WikiEngine()
+    infos = we.run(args.i, 3)
+    print(infos)
 
 else:
     print("Error command !")
