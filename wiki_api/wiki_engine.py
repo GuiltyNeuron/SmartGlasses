@@ -1,4 +1,5 @@
 import wikipedia
+import re
 
 
 class WikiEngine:
@@ -8,5 +9,11 @@ class WikiEngine:
 
     def run(self, object, sentences_number):
 
-        infos = wikipedia.summary(object, sentences=sentences_number)
+        output = wikipedia.summary(object, sentences=sentences_number)
+
+        # remove hexa chars from encoding problem
+        infos = re.sub(r'[^\x00-\x7f]',r'', output)
+
+        # removing listen key from text
+        infos = infos.replace("(listen)", " ")
         return infos
