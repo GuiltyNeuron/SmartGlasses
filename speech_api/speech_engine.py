@@ -3,17 +3,21 @@ import pyttsx3
 
 class SpeechEngine:
 
-    def __init__(self):
+    def __init__(self, lang):
 
         # object creation
         self.engine = pyttsx3.init()
 
-        # setting up new voice rate
-        self.engine.setProperty('rate', 120)
-
         # getting details of current voice
         self.voices = self.engine.getProperty('voices')
-        self.engine.setProperty('voice', self.voices[1].id)
+        if lang == "en":
+            self.engine.setProperty('voice', self.voices[1].id)
+            # setting up new voice rate
+            self.engine.setProperty('rate', 120)
+        if lang == "fr":
+            self.engine.setProperty('voice', self.voices[0].id)
+            # setting up new voice rate
+            self.engine.setProperty('rate', 140)
 
     def text2speech(self, input_txt):
 
