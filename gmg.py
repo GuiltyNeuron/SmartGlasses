@@ -125,6 +125,20 @@ elif args.t == "wiki":
 
     else:
         print("Error selectiong language !")
+
+elif args.t == "news":
+    from news_api.news_engine import NewsEngine
+
+    news = NewsEngine()
+    articles = news.get_latest_articles()
+
+    se.text2speech("We are about to read the latest news articles posted by CNN.")
+    i = 1
+    for article in articles:
+        output = "Article number " + str(i) + ". " + article
+        se.text2speech(output)
+        i +=1
+
 else:
     print("Error command !")
 
