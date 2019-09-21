@@ -19,12 +19,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--t', '-task', help="Classifier mode : task or train", type= str)
 parser.add_argument('--m', '-method', help="Face detection method", type= str)
 parser.add_argument('--i', '-input', help="input text object", type= str)
+parser.add_argument('--l', '-language', help="output language", type= str)
 
 # Get args
 args = parser.parse_args()
 
 # Object instance
-se = SpeechEngine()
+se = SpeechEngine(args.l)
 
 # Face detection
 if args.t == "face_detection":
@@ -58,8 +59,23 @@ if args.t == "face_detection":
     else:
         print("Error detection method !")
 
-    print("Number of detected people is : " + str(len(faces)))
-    se.text2speech("Number of detected people : " + str(len(faces)))
+    if args.l == "en":
+        if len(faces) == 0:
+            se.text2speech("we detected no body !")
+
+        elif len(faces) == 1:
+            se.text2speech("One person was detected !")
+        else:
+            se.text2speech(str(len(faces)) + " persons were detected !")
+
+    elif args.l == "fr":
+        if len(faces) == 0:
+            se.text2speech("Aucune personne a été détecté ! ")
+
+        elif len(faces) == 1:
+            se.text2speech("Une personne a été détecté !")
+        else:
+            se.text2speech(str(len(faces)) + " personnes ont été détectés ! ")
 
 
 # Face recognition
@@ -67,8 +83,21 @@ elif args.t == "face_recognition":
     from face_api.face_engine import DlibHOGFaceDetector
     face_recogniser = DlibHOGFaceDetector()
     person = face_recogniser.dlib_recognition(args.i)
-    print("Person : " + person)
-    se.text2speech("We detected " + person)
+
+    if args.l == "en":
+        if person == "no body !":
+            se.text2speech("We couldn't recognise any person !")
+        else:
+            se.text2speech(person + " was recognised !")
+
+    elif args.l == "fr":
+        if person == "no body !":
+            se.text2speech("Aucunne personne a été reconnu !")
+        else:
+            se.text2speech(person + " a été reconnu !")
+
+    else:
+        se.text2speech("Error language !")
 
 # Initialise dataset to images in face_api/data/dataset
 elif args.t == "face_init":
@@ -85,11 +114,17 @@ elif args.t == "add_face":
 # Ask about somthing using wikipedia
 elif args.t == "wiki":
     from wiki_api.wiki_engine import WikiEngine
-    we = WikiEngine()
-    infos = we.run(args.i, 3)
-    print(infos)
-    se.text2speech(infos)
+    if args.l == "fr":
+        we = WikiEngine("fr")
+        infos = we.run(args.i, 3)
+        se.text2speech(infos)
+    elif args.l == "en":
+        we = WikiEngine("en")
+        infos = we.run(args.i, 3)
+        se.text2speech(infos)
 
+    else:
+        print("Error selectiong language !")
 else:
     print("Error command !")
 
