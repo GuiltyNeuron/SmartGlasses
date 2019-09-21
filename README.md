@@ -18,20 +18,21 @@ command options :
  - -t : task
  - -m : mode (opencv_haar, dlib_hog, dlib_cnn, mtcnn, mobilenet_ssd)
  - -i : input object (image path)
+ - -l : language (en / fr)
  
 #### 1) Face detection
 
 ```
-python gmg.py -t face_detection -m opencv_haar -i image.png
+python gmg.py -t face_detection -m opencv_haar -i image.png -l en
 ```
 #### 2) Face recognition
 Recognise person
 ```
-python gmg.py -t face_recognition -i image.png
+python gmg.py -t face_recognition -i image.png -l en
 ```
 Add person face to dataset
 ```
-python gmg.py -t add_face -i image.png
+python gmg.py -t add_face -i image.png -l fr
 ```
 Initialise dataset with the existing images
 ```
@@ -41,7 +42,13 @@ python gmg.py -t face_init
 #### 3) Wiki_api for informations
 
 ```
-python gmg.py -t wiki -i obama
+python gmg.py -t wiki -i obama -l fr
+```
+
+#### 4) News_api for latest news
+
+```
+python gmg.py -t news
 ```
 
 ## :books: Documentation links
