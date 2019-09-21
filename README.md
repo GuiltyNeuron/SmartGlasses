@@ -1,5 +1,5 @@
 # :boom: Guide Me Glasses (GMG) :boom:
-[![Slack Status](https://img.shields.io/badge/slack-@guidemeglasses-blue.svg?logo=slack)](https://app.slack.com/client/TNNPF1W6S/CNLHDH908)
+[![Slack Status](https://img.shields.io/badge/slack-@GMG-blue.svg?logo=slack)](https://app.slack.com/client/TNNPF1W6S/CNLHDH908)
 
 > Bring the future to your eyes :eyeglasses:
 
