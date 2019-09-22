@@ -117,7 +117,7 @@ elif args.t == "add_face":
 
 # Ask about somthing using wikipedia
 elif args.t == "wiki":
-    from wiki_api.wiki_engine import WikiEngine
+    from infos_api.wiki_engine import WikiEngine
     if args.l == "fr":
         we = WikiEngine("fr")
         infos = we.run(args.i, 3)
