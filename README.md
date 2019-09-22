@@ -58,12 +58,25 @@ Get by number (between 1 and 10) article from the latest articles published by C
 python gmg.py -t news_article -i 3 -l en
 ```
 
-#### 5) weather api
+#### 5) Weather api
 
 Get the weather description for a specified city
 ```
 python gmg.py -t weather -country canada -city vancouver -l en
 ```
+
+#### 6) Time api
+
+Get current date
+```
+python gmg.py -t date -l en
+```
+
+Get current time
+```
+python gmg.py -t time -l en
+```
+
 ## :books: Documentation links
 - Free computer science books [link](http://www.allitebooks.org/)
 - Natural Language Processing (NLP) [link](https://github.com/KhazriAchraf/Text_Classification)
