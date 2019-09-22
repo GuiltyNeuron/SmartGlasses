@@ -47,10 +47,16 @@ python gmg.py -t wiki -i obama -l fr
 
 #### 4) News_api for latest news
 
+Get latest 10 articles from CNN
 ```
-python gmg.py -t news
+python gmg.py -t news_latest -l en
 ```
 
+Get by number (between 1 and 10) article from the latest articles published by CNN
+
+```
+python gmg.py -t news_article -i 3 -l en
+```
 ## :books: Documentation links
 - Free computer science books [link](http://www.allitebooks.org/)
 - Natural Language Processing (NLP) [link](https://github.com/KhazriAchraf/Text_Classification)
