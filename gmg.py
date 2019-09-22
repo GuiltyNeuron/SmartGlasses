@@ -127,7 +127,7 @@ elif args.t == "wiki":
         print("Error selectiong language !")
 
 elif args.t == "news_latest":
-    from news_api.news_engine import NewsEngine
+    from infos_api.news_engine import NewsEngine
 
     news = NewsEngine()
     articles, links = news.get_latest_articles()
@@ -139,7 +139,7 @@ elif args.t == "news_latest":
         i +=1
 
 elif args.t == "news_article":
-    from news_api.news_engine import NewsEngine
+    from infos_api.news_engine import NewsEngine
 
     article_number = int(args.i)
     news = NewsEngine()
