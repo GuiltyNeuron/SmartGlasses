@@ -20,6 +20,10 @@ parser.add_argument('--t', '-task', help="Classifier mode : task or train", type
 parser.add_argument('--m', '-method', help="Face detection method", type= str)
 parser.add_argument('--i', '-input', help="input text object", type= str)
 parser.add_argument('--l', '-language', help="output language", type= str)
+parser.add_argument('--city', '-city', help="city name", type= str)
+parser.add_argument('--country', '-country', help="country name", type= str)
+
+
 
 # Get args
 args = parser.parse_args()
@@ -149,6 +153,14 @@ elif args.t == "news_article":
     se.text2speech("We are about to read the article titeled : " + articles[article_number - 1])
     se.text2speech(article_txt)
     se.text2speech("I hope you enjoyed the article from CNN news.")
+
+elif args.t == "weather":
+    from infos_api.weather_engine import WeatherEngine
+
+    we = WeatherEngine(args.country, args.city)
+    weather = we.get_today_weather()
+    se.text2speech(weather)
+
 else:
     print("Error command !")
 
