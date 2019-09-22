@@ -161,6 +161,18 @@ elif args.t == "weather":
     weather = we.get_today_weather()
     se.text2speech(weather)
 
+elif args.t == "date":
+    from infos_api.time_engine import TimeEngine
+    te = TimeEngine()
+    date = te.date()
+    se.text2speech(date)
+
+elif args.t == "time":
+    from infos_api.time_engine import TimeEngine
+    te = TimeEngine()
+    time = te.time()
+    se.text2speech(time)
+
 else:
     print("Error command !")
 
