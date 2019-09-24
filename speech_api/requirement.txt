@@ -1,0 +1,2 @@
+SpeechRecognition
+PyAudio
