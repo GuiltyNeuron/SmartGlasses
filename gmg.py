@@ -33,30 +33,29 @@ se = SpeechEngine(args.l)
 
 # Face detection
 if args.t == "face_detection":
-    from face_api.face_engine import OpenCVHaarFaceDetector
-    # Initialize method
+
     if args.m == 'opencv_haar':
-        from face_api.face_engine import OpenCVHaarFaceDetector
+        from face_api.haar_cascade import OpenCVHaarFaceDetector
         face_detector = OpenCVHaarFaceDetector()
         faces = face_detector.cascade_classifier_detector(args.i)
 
     elif args.m == 'dlib_hog':
-        from face_api.face_engine import DlibHOGFaceDetector
+        from face_api.dlib_hog import DlibHOGFaceDetector
         face_detector = DlibHOGFaceDetector()
         faces = face_detector.face_detector(args.i)
 
     elif args.m == 'dlib_cnn':
-        from face_api.face_engine import DlibCNNFaceDetector
+        from face_api.dlib_cnn import DlibCNNFaceDetector
         face_detector = DlibCNNFaceDetector()
         faces = face_detector.detect_face(args.i)
 
     elif args.m == 'mtcnn':
-        from face_api.face_engine import TensorflowMTCNNFaceDetector
+        from face_api.mtcnn import TensorflowMTCNNFaceDetector
         face_detector = TensorflowMTCNNFaceDetector()
         faces = face_detector.detect_face(args.i)
 
     elif args.m == 'mobilenet_ssd':
-        from face_api.face_engine import TensoflowMobilNetSSDFaceDector
+        from face_api.ssd_mobilenet import TensoflowMobilNetSSDFaceDector
         face_detector = TensoflowMobilNetSSDFaceDector()
         faces = face_detector.detect_face(args.i)
 
@@ -84,7 +83,7 @@ if args.t == "face_detection":
 
 # Face recognition
 elif args.t == "face_recognition":
-    from face_api.face_engine import DlibHOGFaceDetector
+    from face_api.dlib_hog import DlibHOGFaceDetector
     face_recogniser = DlibHOGFaceDetector()
     person = face_recogniser.dlib_recognition(args.i)
 
