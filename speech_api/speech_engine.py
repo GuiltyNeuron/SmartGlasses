@@ -1,5 +1,5 @@
 import pyttsx3
-
+import speech_recognition as sr
 
 class SpeechEngine:
 
@@ -25,65 +25,20 @@ class SpeechEngine:
         self.engine.runAndWait()
         self.engine.stop()
 
-"""import pyttsx3
+    def speech2text(self):
 
-# object creation
-engine = pyttsx3.init()
-
-# RATE
-# getting details of current speaking rate
-rate = engine.getProperty('rate')
-
-# setting up new voice rate
-engine.setProperty('rate', 160)
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print("say something !")
+            audio = r.listen(source)
+            print("time over !")
 
 
-# VOLUME
-# getting to know current volume level (min=0 and max=1)
-volume = engine.getProperty('volume')
+        try:
+            print("text : " + r.recognize_google(audio));
+        except:
+            pass;
 
-# setting up volume level  between 0 and 1
-engine.setProperty('volume',1.0)
 
-# VOICE
-# getting details of current voice
-voices = engine.getProperty('voices')
-# changing index, changes voices. 1 for female
-
-engine.setProperty('voice', voices[1].id)
-
-engine.say("Hello World!")
-
-engine.runAndWait()"""
-
-# ================================================================================================
-"""from gtts import gTTS
-import os
-
-tts = gTTS(text='Good morning', lang='en')
-# tts.save("good.mp3")
-# os.system("mpg321 good.mp3")
-
-import speech
-speech.say('Hola mundo', 'es_ES')
-
-import sound
-
-r = sound.Recorder('audio.m4a')
-r.record(3)  # seconds
-
-text = speech.recognize('audio.m4a', 'en')[0][0]  # sent to Apple servers
-"""
-
-# ==================================================================================================
-
-"""import win32com.client as wincl
-speak = wincl.Dispatch("SAPI.SpVoice")
-speak.Speak("Hello World")"""
-
-# ==================================================================================================
-
-"""from tts_watson.TtsWatson import TtsWatson
-
-ttsWatson = TtsWatson('watson_user', 'watson_password', 'en-US_AllisonVoice')
-ttsWatson.play("Hello World")"""
+se = SpeechEngine("en")
+se.speech2text()
