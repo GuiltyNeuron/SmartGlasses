@@ -1,7 +1,7 @@
 #coding:utf-8
 import numpy as np
-from lib.fast_rcnn.nms_wrapper import nms
-from lib.fast_rcnn.config import cfg
+from ocr_api.lib.fast_rcnn.nms_wrapper import nms
+from ocr_api.lib.fast_rcnn.config import cfg
 from .text_proposal_connector import TextProposalConnector
 from .text_proposal_connector_oriented import TextProposalConnector as TextProposalConnectorOriented
 from .text_connect_cfg import Config as TextLineCfg
