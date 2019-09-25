@@ -172,6 +172,13 @@ elif args.t == "time":
     time = te.time()
     se.text2speech(time)
 
+elif args.t == "ocr":
+    from ocr_api.ocr_engine import OcrEngine
+
+    ocr = OcrEngine()
+    txt = ocr.run("ocr_api/data/demo/deskew2.jpg")
+    se.text2speech(txt)
 else:
     print("Error command !")
+
 
