@@ -1,4 +1,12 @@
 from __future__ import print_function
+from lib.fast_rcnn.config import cfg, cfg_from_file
+from lib.fast_rcnn.test import _get_blobs
+from lib.text_connector.detectors import TextDetector
+from lib.text_connector.text_connect_cfg import Config as TextLineCfg
+from lib.rpn_msr.proposal_layer_tf import proposal_layer
+from tensorflow.python.platform import gfile
+import pytesseract
+import math
 import glob
 import os
 import shutil
@@ -6,14 +14,6 @@ import sys
 import cv2
 import numpy as np
 import tensorflow as tf
-from tensorflow.python.platform import gfile
-from lib.fast_rcnn.config import cfg, cfg_from_file
-from lib.fast_rcnn.test import _get_blobs
-from lib.text_connector.detectors import TextDetector
-from lib.text_connector.text_connect_cfg import Config as TextLineCfg
-from lib.rpn_msr.proposal_layer_tf import proposal_layer
-import pytesseract
-import math
 
 
 class CtpnDetector:
@@ -162,33 +162,44 @@ class OcrEngine():
         # Load image
         img = cv2.imread(image_path)
 
+
         # BGR to Grayscale
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
+        # Create a mask for the image
+        mask = np.zeros(shape=gray.shape)
+
         # Threshold
-        #blur = cv2.GaussianBlur(gray, (5, 5), 0)
+
+        # blur = cv2.GaussianBlur(gray, (5, 5), 0)
+
         ret, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+        mask = np.zeros(shape=th.shape)
+
 
         # Detect text
         output, bboxes = self.detector.detect_text(img)
 
-        # Read each bbox
-        output_text = []
         for i in range(len(output)):
-            output_recognition = self.recogniser.img2txt(th[output[i][0]:output[i][1],output[i][2]:output[i][3]], 'eng')
-            cv2.imshow("img", th[output[i][0]:output[i][1],output[i][2]:output[i][3]])
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
-            output_text.append(output_recognition)
 
-        print(output_text)
+            # mini mask for every crop
+            m_ones = np.ones(shape=(output[i][1] - output[i][0], output[i][3] - output[i][2]))
+            m = np.pad(m_ones, ((output[i][0], gray.shape[0] - output[i][1]), (output[i][2], gray.shape[1] - output[i][3])), 'constant')
 
-#ocr = OcrEngine()
-#ocr.run("data/demo/1.jpg")
+            # add mini mask to global mask
+            mask = mask + m
 
-p = PreProcess()
-file_path = 'data/demo/book.jpg'
-angel = p.compute_skew(file_path)
-dst = p.deskew(file_path, angel)
-cv2.imshow("Result", dst)
-cv2.waitKey(0)
+        final_image = th * mask
+
+        cv2.imwrite("data/demo/out.png", final_image)
+
+        output_recognition = self.recogniser.img2txt(final_image, 'eng')
+
+        print(output_recognition)
+
+        return 0
+
+
+e = OcrEngine()
+e.run("data/demo/1.jpg")
