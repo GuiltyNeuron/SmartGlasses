@@ -77,6 +77,13 @@ Get current time
 python gmg.py -t time -l en
 ```
 
+#### 7) Ocr api
+
+Read text from input image
+```
+python gmg.py -t ocr -i image_path -l en
+```
+
 ## :books: Documentation links
 - Free computer science books [link](http://www.allitebooks.org/)
 - Natural Language Processing (NLP) [link](https://github.com/KhazriAchraf/Text_Classification)
