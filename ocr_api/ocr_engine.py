@@ -99,58 +99,44 @@ class TesseractEngine:
     def img2txt(self, img, language):
         return pytesseract.image_to_string(img, lang = language, config=self.tessdata_dir_config)
 
+
 class PreProcess():
 
-    def compute_skew(self, file_name):
+    def deskew(self, img):
 
-        # load in grayscale:
-        src = cv2.imread(file_name, 0)
-        height, width = src.shape[0:2]
+        gray = cv2.bitwise_not(img)
 
-        # invert the colors of our image:
-        cv2.bitwise_not(src, src)
+        # threshold the image, setting all foreground pixels to
+        # 255 and all background pixels to 0
+        thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+        # grab the (x, y) coordinates of all pixel values that
+        # are greater than zero, then use these coordinates to
+        # compute a rotated bounding box that contains all
+        # coordinates
 
-        # Hough transform:
-        minLineLength = width / 2.0
-        maxLineGap = 20
-        lines = cv2.HoughLinesP(src, 1, np.pi / 180, 100, minLineLength, maxLineGap)
+        coords = np.column_stack(np.where(thresh > 0))
+        angle = cv2.minAreaRect(coords)[-1]
 
-        # calculate the angle between each line and the horizontal line:
-        angle = 0.0
-        nb_lines = len(lines)
+        # the `cv2.minAreaRect` function returns values in the
+        # range [-90, 0); as the rectangle rotates clockwise the
+        # returned angle trends to 0 -- in this special case we
+        # need to add 90 degrees to the angle
+        if angle < -45:
+            angle = -(90 + angle)
 
-        for line in lines:
-            angle += math.atan2(line[0][3] * 1.0 - line[0][1] * 1.0, line[0][2] * 1.0 - line[0][0] * 1.0);
+        # otherwise, just take the inverse of the angle to make
+        # it positive
+        else:
+            angle = -angle
 
-        angle /= nb_lines * 1.0
+        # rotate the image to deskew it
+        (h, w) = img.shape[:2]
+        center = (w // 2, h // 2)
+        M = cv2.getRotationMatrix2D(center, angle, 1.0)
+        rotated = cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 
-        return angle * 180.0 / np.pi
+        return rotated, angle
 
-    def deskew(self, file_name, angle):
-
-        # load in grayscale:
-        img = cv2.imread(file_name, 0)
-
-        # invert the colors of our image:
-        cv2.bitwise_not(img, img)
-
-        # compute the minimum bounding box:
-        non_zero_pixels = cv2.findNonZero(img)
-        center, wh, theta = cv2.minAreaRect(non_zero_pixels)
-
-        root_mat = cv2.getRotationMatrix2D(center, angle, 1)
-        rows, cols = img.shape
-        rotated = cv2.warpAffine(img, root_mat, (cols, rows), flags=cv2.INTER_CUBIC)
-
-        # Border removing:
-        sizex = np.int0(wh[0])
-        sizey = np.int0(wh[1])
-
-        if theta > -45:
-            temp = sizex
-            sizex = sizey
-            sizey = temp
-        return cv2.getRectSubPix(rotated, (sizey, sizex), center)
 
 class OcrEngine():
 
@@ -162,21 +148,16 @@ class OcrEngine():
         # Load image
         img = cv2.imread(image_path)
 
-
         # BGR to Grayscale
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-        # Create a mask for the image
-        mask = np.zeros(shape=gray.shape)
 
         # Threshold
 
         # blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
-        ret, th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+        th = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
         mask = np.zeros(shape=th.shape)
-
 
         # Detect text
         output, bboxes = self.detector.detect_text(img)
@@ -190,16 +171,30 @@ class OcrEngine():
             # add mini mask to global mask
             mask = mask + m
 
-        final_image = th * mask
+        # Delete unneaded area
+        image_text_only = th * mask
 
-        cv2.imwrite("data/demo/out.png", final_image)
+        # Add white to unneaded area
+        white = np.zeros(shape=th.shape)
+        white_mask = np.where(mask == 0, 255, white)
+        processed_image = image_text_only + white_mask
 
-        output_recognition = self.recogniser.img2txt(final_image, 'eng')
+        # Save and load processed image
+        cv2.imwrite("data/demo/out.png", processed_image)
+        img = cv2.imread("data/demo/out.png")
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+        # Deskew
+        p = PreProcess()
+        deskewed, angle = p.deskew(gray)
+        cv2.imwrite("data/demo/out.png", deskewed)
+
+        # Text recognition using tesseract
+        output_recognition = self.recogniser.img2txt(deskewed, 'eng')
 
         print(output_recognition)
 
-        return 0
-
 
 e = OcrEngine()
-e.run("data/demo/1.jpg")
+e.run("data/demo/deskew2.jpg")
+
