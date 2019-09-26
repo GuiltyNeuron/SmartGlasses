@@ -176,7 +176,7 @@ elif args.t == "ocr":
     from ocr_api.ocr_engine import OcrEngine
 
     ocr = OcrEngine()
-    txt = ocr.run("ocr_api/data/demo/deskew2.jpg")
+    txt = ocr.run(args.i)
     se.text2speech(txt)
 else:
     print("Error command !")
