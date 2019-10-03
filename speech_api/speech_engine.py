@@ -1,6 +1,7 @@
 import pyttsx3
 import speech_recognition as sr
 
+
 class SpeechEngine:
 
     def __init__(self, lang):
@@ -38,7 +39,3 @@ class SpeechEngine:
             print("text : " + r.recognize_google(audio));
         except:
             pass;
-
-
-se = SpeechEngine("en")
-se.speech2text()
