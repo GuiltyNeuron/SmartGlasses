@@ -1,5 +1,7 @@
 import face_api.resources.mtcnn.mtcnn as mtcnn
 import cv2 as cv
+import os
+import tensorflow as tf
 
 class TensorflowMTCNNFaceDetector():
     def __init__(self, model_path=os.path.join(os.path.dirname(__file__), 'models/mtcnn')):
