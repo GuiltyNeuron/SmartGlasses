@@ -16,7 +16,9 @@ Steps to extract text from image :
 - Step 3 : Deskew text
 - Step 1 : Thresholding
 - Step 1 : OCR using Google Tesseract
-![matriels](data/ocr_steps.png)
+
+![ocr_steps](data/ocr_steps.png)
+
 ## :books: Documentation
 - Text detectors DNN : [Link](https://github.com/hwalsuklee/awesome-deep-text-detection-recognition)
 - Text detection from real scene CTPN dnn detector : [Link](https://github.com/eragonruan/text-detection-ctpn)
