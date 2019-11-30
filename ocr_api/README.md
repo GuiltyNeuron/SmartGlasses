@@ -14,8 +14,8 @@ Steps to extract text from image :
 - Step 1 : Read image
 - Step 2 : Detect text
 - Step 3 : Deskew text
-- Step 1 : Thresholding
-- Step 1 : OCR using Google Tesseract
+- Step 4 : Thresholding
+- Step 5 : OCR using Google Tesseract
 
 ![ocr_steps](data/ocr_steps.png)
 
