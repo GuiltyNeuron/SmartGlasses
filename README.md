@@ -1,5 +1,7 @@
 # :boom: Guide Me Glasses (GMG) :boom:
-[![Slack Status](https://img.shields.io/badge/slack-@GMG-blue.svg?logo=slack)](https://app.slack.com/client/TNNPF1W6S/CNLHDH908)
+[![Licence](https://img.shields.io/github/license/GuiltyNeuron/ANPR?style=plastic)](https://github.com/GuiltyNeuron/ANPR/blob/master/LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-TowardsDataScience-blue)](https://towardsdatascience.com/automatic-license-plate-detection-recognition-using-deep-learning-624def07eaaf)
+[![Python](https://img.shields.io/badge/python-3.5.5-yellow)]()
 
 > Bring the future to your eyes :eyeglasses:
 
