@@ -1,7 +1,7 @@
 # :boom: Guide Me Glasses (GMG) :boom:
-[![Licence](https://img.shields.io/github/license/GuiltyNeuron/ANPR?style=plastic)](https://github.com/GuiltyNeuron/ANPR/blob/master/LICENSE)
-[![Documentation](https://img.shields.io/badge/documentation-TowardsDataScience-blue)](https://towardsdatascience.com/automatic-license-plate-detection-recognition-using-deep-learning-624def07eaaf)
-[![Python](https://img.shields.io/badge/python-3.5.5-yellow)]()
+[![Licence](https://img.shields.io/github/license/GuiltyNeuron/ANPR?style=plastic)](https://github.com/GuiltyNeuron/SmartGlasses/blob/master/LICENSE)
+[![Documentation](https://img.shields.io/badge/documentation-TowardsDataScience-blue)](https://medium.com/@achraf_khazri/smart-glasses-project-1812392427d1)
+[![Python](https://img.shields.io/badge/python-3.5.5-yellow)](https://www.python.org/downloads/release/python-355/)
 
 > Bring the future to your eyes :eyeglasses:
 
